@@ -82,17 +82,17 @@
                     <navigationItem key="navigationItem" title="MERCH SHOP" id="4zf-zG-j8A"/>
                     <connections>
                         <outlet property="categoryTable" destination="wKt-vP-sqw" id="npl-oG-Sjh"/>
-                        <segue destination="uJd-Qt-Knb" kind="show" id="fIP-VQ-lJo"/>
+                        <segue destination="uJd-Qt-Knb" kind="show" identifier="ProductsVC" id="fIP-VQ-lJo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="136.95652173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--ProductsVC-->
         <scene sceneID="UQh-gd-ao1">
             <objects>
-                <viewController id="uJd-Qt-Knb" sceneMemberID="viewController">
+                <viewController id="uJd-Qt-Knb" customClass="ProductsVC" customModule="merch_shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gBP-y6-Zcv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="seB-Rj-pzD" customClass="ProductCell" customModule="merch_shop" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="seB-Rj-pzD" customClass="ProductCell" customModule="merch_shop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -158,8 +158,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="productImage" destination="7XO-f6-ItU" id="EaC-kF-IN2"/>
-                                            <outlet property="productPrive" destination="ea6-Lx-y2W" id="O4i-SG-xQn"/>
-                                            <outlet property="productTile" destination="9LV-43-rBk" id="tW5-UE-A5g"/>
+                                            <outlet property="productPrice" destination="ea6-Lx-y2W" id="kDk-Lw-yeM"/>
+                                            <outlet property="productTitle" destination="9LV-43-rBk" id="GVe-fa-1lA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -176,6 +176,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K4j-KT-wka"/>
                     </view>
+                    <connections>
+                        <outlet property="productsCollection" destination="JeV-kn-Kgj" id="Npc-Nj-OwE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWo-w3-7db" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

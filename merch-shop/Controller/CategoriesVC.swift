@@ -32,6 +32,24 @@ class CategoriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         } else {
             return CategoryCell()
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = DataService.instance.getCategories()[indexPath.row]
+        performSegue(withIdentifier: "ProductsVC", sender: category)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productsVC = segue.destination as? ProductsVC {
+            
+            let barButton = UIBarButtonItem()
+            barButton.title = ""
+            navigationItem.backBarButtonItem = barButton
+            
+            assert(sender as? Category != nil) // Dont use guard cause we expect our Products VC to receive a category nothing else
+            productsVC.initializeProducts(category: sender as! Category)
+        }
     }
 
 
